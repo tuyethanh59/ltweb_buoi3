@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bài 5</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<div id = 'HienThi'></div>
+		<script>
+			function ThoiGian()
+			{
+				var d = new Date();
+				var gio = d.getHours();
+				var phut = d.getMinutes();
+				var giay = d.getSeconds();
+				
+				//document.write('<b>' + '<h1>' + 'Bây giờ là ' + gio + ':' + phut + ':' + giay + '</h1>' +'</b>'); //document.write không xóa cái cũ được nó sẽ lặp lại rất nhìu
+				document.getElementById('HienThi').innerHTML = '<b>' + '<h1>' + 'Bây giờ là ' + gio + ':' + phut + ':' + giay + '</h1>' +'</b>';
+			}
+			setInterval(ThoiGian, 1000);
+		</script>
+	</body>
+</html>

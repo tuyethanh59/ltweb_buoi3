@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bài 4</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<script>
+			function KiemTra()
+			{
+				//Lấy giá trị từ 3 ô
+				/* cách 1
+				var tdn = document.getElementsByName(TenDangNhap).value;
+				var mk = document.getElementsByName(MatKhau).value;
+				var nlmk = document.getElementsByName(NhapLaiMatKhau).value;
+				*/
+				var tdn = f.TenDangNhap.value;
+				var mk = f.MatKhau.value;
+				var nlmk = f.NhapLaiMatKhau.value;
+				//Thông báo lỗi khi không nhập gt vài 3 ô
+				if(tdn == '' || mk == '' || nlmk == '')
+				{
+					alert('Các ô bắt buộc phải nhập!!!');
+					return false;
+				}
+				if(tdn.length <6)
+				{
+					alert('Tên đăng nhập không được nhỏ hơn 6 ký tự!!!');
+					return false;
+				}
+				if(mk != nlmk)
+				{
+					alert('Mật khẩu nhập lại không khớp!!!');
+					return false;
+				}
+				return true;
+			}
+		</script>
+		<form name = 'f'>
+			<table>
+				<tr>
+					<td>Tên đăng nhập:</td>
+					<td><input type='text' name='TenDangNhap'> (nhiều hơn 6 ký tự)</td>
+				</tr>
+				<tr>
+					<td>Mật khẩu:</td>
+					<td><input type='password' name='MatKhau'></td>
+				</tr>
+				<tr>
+					<td>Nhập lại mật khẩu:</td>
+					<td><input type='password' name='NhapLaiMatKhau'></td>
+				</tr>
+			</table>
+			<button type='submit' onclick='return KiemTra()'>Kiểm tra</button>
+		</form>
+	</body>
+</html>
